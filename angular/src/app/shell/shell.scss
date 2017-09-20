@@ -1,0 +1,88 @@
+@import "../variables";
+
+.navbar-default {
+  background-color: $navbar-bg-color;
+  .nav {
+    li {
+      a {
+        color: $navbar-text-color;
+        &:hover, &:focus {
+          color: $navbar-text-color;
+        }
+      }
+    }
+  }
+}
+
+.navbar-header {
+  margin-left: -40px !important;
+  .navbar-brand {
+    padding-right: 0;
+  }
+  img {
+    height: 100%;
+    margin-top: 35px;
+  }
+}
+
+.toggle {
+  border: none;
+  .navbar-toggle {
+    color: white;
+    background-color: transparent !important;
+    &:focus, &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-default {
+    .nav {
+      li {
+        a {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-header {
+    margin-left: -15px !important;
+    .navbar-brand {
+      padding-right: 15px !important;
+    }
+    img {
+      margin-top: 0 !important;
+    }
+  }
+
+  .navbar-default {
+    .menus {
+      li {
+        a {
+          text-align: center;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+    .account-mobile,
+    .toggle {
+      display: block !important;
+    }
+    .navbar-right-full {
+      display: none !important;
+    }
+  }
+}
+
+.account-mobile,
+.toggle {
+  padding-top: 5px !important;
+  padding-right: 10px !important;
+  display: none !important;
+}

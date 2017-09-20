@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+$fa-font-path: "~font-awesome/fonts";
+
+$zmdi-icon-prefix: githor;
+$zmdi-font-path: "~material-design-iconic-font/dist/fonts";
+
+@import "variables";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "~material-design-iconic-font/scss/material-design-iconic-font";
+@import "~font-awesome/scss/font-awesome";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+html, body {
+  background-color: #F1F4FA;
+}
+
+body, html, h6, h5, h4, h3, h2, h1, p, span, div, label {
+  font-family: 'Open Sans', Asap !important;
+}
+
+h5 {
+  color: #a8afb5 !important;
+}
+
+h6, h5, h4, h3, h2, h1 {
+  font-weight: bold !important;
+  color: $main-color !important;
+}
+
+label {
+  color: $main-color !important;
+}
+
+.form-control {
+  border-radius: 1px !important;
+  border: solid 1px #e1e6ee !important;
+}
+
+button {
+  border-radius: 1px !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: 'Open Sans', Asap !important;
+  font-weight: lighter !important;
+  font-size: 14px !important;
+  color: #a8afb5;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #a8afb5;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: 'Open Sans', Asap !important;
+  color: #a8afb5;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  font-family: 'Open Sans', Asap !important;
+  color: #a8afb5;
+}
+
+md-progress-bar {
+  margin-top: 0 !important;
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.full {
+  width: 100%;
+}
+
+.page-container {
+  padding-left: 47px;
+  padding-right: 47px;
+  margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+  .page-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+  }
+}
+
+md-dialog-container {
+  max-width: none !important;
+}
