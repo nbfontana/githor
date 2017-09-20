@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SharedMaterialModule} from "app/shared/material.module";
 import {NgxBrModule} from "ngx-br";
 import {NgxUtilitiesModule} from "ngx-utilities";
+import {GithubService} from "./services/github.service";
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import {NgxUtilitiesModule} from "ngx-utilities";
   providers: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GithubService
   ]
 })
 export class SharedModule {
