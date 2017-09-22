@@ -1,4 +1,5 @@
 import {ShellComponent} from "./shell/shell.page";
+import {PageNotFoundPageComponent} from "./modules/page-not-found/page-not-found.page";
 
 export const ROUTES = [
   {
@@ -17,8 +18,12 @@ export const ROUTES = [
     ]
   },
   {
+    path: 'page-not-found',
+    component: PageNotFoundPageComponent
+  },
+  {
     path: '**',
-    redirectTo: 'app',
+    redirectTo: 'page-not-found',
     pathMatch: 'full'
   }
 ];

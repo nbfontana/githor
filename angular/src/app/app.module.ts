@@ -9,6 +9,7 @@ import {SharedModule} from "app/shared/shared.module";
 import {ShellModule} from "./shell/shell.module";
 import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
 import {ROUTES} from "./app.routes";
+import {PageNotFoundPageComponent} from "./modules/page-not-found/page-not-found.page";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -17,7 +18,8 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundPageComponent
   ],
   imports: [
     HttpModule,
