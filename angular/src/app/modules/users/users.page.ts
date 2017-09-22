@@ -34,7 +34,10 @@ export class UsersPageComponent {
       return;
     }
 
-    this.searchConfig.page = this.searchConfig.page + 1;
+    if (this.users.length === this.searchConfig.itensPerPage) {
+      this.searchConfig.page = this.searchConfig.page + 1;
+    }
+
     this.getUsers();
   }
 
@@ -59,6 +62,7 @@ export class UsersPageComponent {
 
   public commentUser(username: string): void {
     let dialogRef = this.dialog.open(CommentUserDialogComponent, {data: username});
-    dialogRef.afterClosed().subscribe(data => {});
+    dialogRef.afterClosed().subscribe(data => {
+    });
   }
 }

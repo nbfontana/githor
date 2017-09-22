@@ -7,7 +7,9 @@
       <div class="row mb20 mt20">
         <div class="col-md-3 col-sm-3">
           <md-form-field class="full">
-            <input mdInput placeholder="Username" [(ngModel)]="searchConfig.userName">
+            <input mdInput placeholder="Username"
+                   [(ngModel)]="searchConfig.userName"
+                   (ngModelChange)="searchConfig.page = 1">
           </md-form-field>
         </div>
         <div class="col-md-3 col-sm-3">

@@ -61,12 +61,19 @@ export class GithubService {
   }
 
   private createPaginationEndpoint(searchConfig: SearchConfig) {
-    if (searchConfig.place && !searchConfig.language) {
-      return `${this.usersEndpoint}${searchConfig.userName}+location:${searchConfig.place}&page=${searchConfig.page}&per_page=12`;
-    } else if (!searchConfig.place && searchConfig.language) {
-      return `${this.usersEndpoint}${searchConfig.userName}+language:${searchConfig.language}&page=${searchConfig.page}&per_page=12`;
+    let endpoint: string = `${this.usersEndpoint}${searchConfig.userName}`;
+
+    let place = searchConfig.place;
+    let page = searchConfig.page;
+    let language = searchConfig.language;
+    let itensPerPage = searchConfig.itensPerPage;
+
+    if (place && !language) {
+      return `${endpoint}+location:${place}&page=${page}&per_page=${itensPerPage}`;
+    } else if (!place && language) {
+      return `${endpoint}+language:${language}&page=${page}&per_page=${itensPerPage}`;
     }
 
-    return `${this.usersEndpoint}${searchConfig.userName}+location:${searchConfig.place}+language:${searchConfig.language}&page=${searchConfig.page}&per_page=12`;
+    return `${endpoint}+location:${place}+language:${language}&page=${page}&per_page=${itensPerPage}`;
   }
 }
