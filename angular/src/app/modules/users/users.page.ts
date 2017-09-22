@@ -31,8 +31,7 @@ export class UsersPageComponent {
       return;
     }
 
-    let page = this.searchConfig.pageNumber;
-    this.searchConfig.pageNumber = page + 1;
+    this.searchConfig.page = this.searchConfig.page + 1;
     this.getUsers();
   }
 
@@ -41,13 +40,13 @@ export class UsersPageComponent {
       return;
     }
 
-    if (this.searchConfig.pageNumber > 1) {
-      this.searchConfig.pageNumber = this.searchConfig.pageNumber - 1;
+    if (this.searchConfig.page > 1) {
+      this.searchConfig.page = this.searchConfig.page - 1;
     }
     this.getUsers();
   }
 
-  public showPaginator(): boolean {
+  public showUsersAndPaginator(): boolean {
     return !this.loading && this.users.length > 0;
   }
 }

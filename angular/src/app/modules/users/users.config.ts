@@ -1,9 +1,10 @@
 export class SearchConfig {
 
-  public pageNumber: number;
-  public searchPlace: string;
   public language: string;
   public userName: string = '';
+
+  private pageNumber: number;
+  private searchPlace: string;
 
   get place(): string {
     return this.searchPlace || 'Brazil';
