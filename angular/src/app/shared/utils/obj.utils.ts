@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 export function normalizeCallbackVariables(object: any) {
   let objectNormalized = {};
 
@@ -6,7 +8,11 @@ export function normalizeCallbackVariables(object: any) {
       return g[1].toUpperCase();
     });
 
-    objectNormalized[camelCasedKey] = object[key];
+    if (_.isObject(object[key])) {
+      objectNormalized[camelCasedKey] = normalizeCallbackVariables(object[key]);
+    } else {
+      objectNormalized[camelCasedKey] = object[key];
+    }
   });
 
   return objectNormalized;

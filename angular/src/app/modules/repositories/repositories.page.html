@@ -5,8 +5,14 @@
     <div class="col-md-12 page-container">
 
       <div class="row">
-        <div class="col-md-6" *ngFor="let repo of repositories">
-          <pre>{{repo | json}}</pre>
+        <div class="col-md-12">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-6 form-group" *ngFor="let repo of repositories">
+          <github-repository-card [repo]="repo"></github-repository-card>
         </div>
       </div>
 

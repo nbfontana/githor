@@ -6,6 +6,7 @@ import {Http} from "@angular/http";
 import {normalizeCallbackVariables} from "../utils/obj.utils";
 import {GithubUser} from "../model/github-user";
 import {SearchConfig} from "../../modules/users/users.config";
+import {GithubRepository} from "../../modules/repositories/repository";
 
 @Injectable()
 export class GithubService {
@@ -16,13 +17,13 @@ export class GithubService {
   constructor(private http: Http) {
   }
 
-  public getRepositories(searchConfig: SearchConfig): Observable<any> {
+  public getRepositories(searchConfig: SearchConfig): Observable<GithubRepository[]> {
     let endpoint = this.getRepositoriesEndpoint(searchConfig);
 
     return Observable.create((observer) => {
       return this.http.get(endpoint).map((res) => res.json())
         .subscribe((response) => {
-          observer.next(response);
+          observer.next(this.normalizeUsersList(response || []));
           observer.complete();
         }, (error) => {
           observer.error(error);

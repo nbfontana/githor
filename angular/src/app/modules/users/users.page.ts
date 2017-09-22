@@ -62,7 +62,6 @@ export class UsersPageComponent {
 
   public commentUser(username: string): void {
     let dialogRef = this.dialog.open(CommentUserDialogComponent, {data: username});
-    dialogRef.afterClosed().subscribe(data => {
-    });
+    dialogRef.afterClosed().subscribe();
   }
 }

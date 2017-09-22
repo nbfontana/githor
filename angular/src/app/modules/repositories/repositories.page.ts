@@ -2,8 +2,9 @@ import {Component, OnDestroy} from "@angular/core";
 import {SearchConfig} from "../users/users.config";
 import {GithubService} from "app/shared/services/github.service";
 import {ActivatedRoute} from "@angular/router";
+import {GithubRepository} from "./repository";
 
-const ITEMS_PER_PAGE: number = 2;
+const ITEMS_PER_PAGE: number = 6;
 
 @Component({
   selector: 'repositories-page',
@@ -13,7 +14,7 @@ export class RepositoriesPageComponent implements OnDestroy {
 
   public loading: boolean;
   public username: string;
-  public repositories: any[] = [];
+  public repositories: GithubRepository[];
   public searchConfig: SearchConfig = new SearchConfig();
 
   private routeParamsSubscrible;
@@ -68,9 +69,10 @@ export class RepositoriesPageComponent implements OnDestroy {
 
   private getRepositories() {
     this.loading = true;
-    this.githubService.getRepositories(this.searchConfig).subscribe((data) => {
+    this.repositories = [];
+    this.githubService.getRepositories(this.searchConfig).subscribe((repos) => {
       this.loading = false;
-      this.repositories = data
+      this.repositories = repos;
     }, () => this.loading = false);
   }
 }
