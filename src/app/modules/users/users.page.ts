@@ -4,7 +4,7 @@ import {GithubService} from "../../shared/services/github.service";
 import {GithubUser} from "../../shared/model/github-user";
 import {SearchConfig} from "./users.config";
 import {MdDialog} from "@angular/material";
-import {CommentUserDialogComponent} from "./comment/comment-user.dialog";
+import {CommentUserDialogComponent} from "./comment-dialog/comment-user.dialog";
 
 @Component({
   selector: 'users',

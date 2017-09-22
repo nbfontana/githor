@@ -18,7 +18,12 @@ export class CommentUserDialogComponent {
   }
 
   public done() {
-    localStorage.setItem(this.user, this.comment);
+    if (this.comment) {
+      localStorage.setItem(this.user, this.comment);
+    } else {
+      localStorage.removeItem(this.user);
+    }
+
     this.dialogRef.close();
   }
 
