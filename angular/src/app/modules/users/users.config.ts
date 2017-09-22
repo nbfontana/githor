@@ -2,7 +2,7 @@ export class SearchConfig {
 
   public language: string;
   public userName: string = '';
-  public itensPerPage: number = 12;
+  public itemsPerPage: number = 12;
 
   private pageNumber: number;
   private searchPlace: string;

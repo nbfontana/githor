@@ -16,8 +16,23 @@ export class GithubService {
   constructor(private http: Http) {
   }
 
+  public getRepositories(searchConfig: SearchConfig): Observable<any> {
+    let endpoint = this.getRepositoriesEndpoint(searchConfig);
+
+    return Observable.create((observer) => {
+      return this.http.get(endpoint).map((res) => res.json())
+        .subscribe((response) => {
+          observer.next(response);
+          observer.complete();
+        }, (error) => {
+          observer.error(error);
+          observer.complete();
+        });
+    });
+  }
+
   public getUsers(searchConfig: SearchConfig): Observable<GithubUser[]> {
-    let endpoint = this.createPaginationEndpoint(searchConfig);
+    let endpoint = this.getUsersEndpoint(searchConfig);
 
     return Observable.create((observer) => {
       return this.http.get(endpoint).map((res) => res.json())
@@ -60,20 +75,28 @@ export class GithubService {
     return normalizedUsersList;
   }
 
-  private createPaginationEndpoint(searchConfig: SearchConfig) {
+  private getUsersEndpoint(searchConfig: SearchConfig) {
     let endpoint: string = `${this.usersEndpoint}${searchConfig.userName}`;
 
     let place = searchConfig.place;
     let page = searchConfig.page;
     let language = searchConfig.language;
-    let itensPerPage = searchConfig.itensPerPage;
+    let itemsPerPage = searchConfig.itemsPerPage;
 
     if (place && !language) {
-      return `${endpoint}+location:${place}&page=${page}&per_page=${itensPerPage}`;
+      return `${endpoint}+location:${place}&page=${page}&per_page=${itemsPerPage}`;
     } else if (!place && language) {
-      return `${endpoint}+language:${language}&page=${page}&per_page=${itensPerPage}`;
+      return `${endpoint}+language:${language}&page=${page}&per_page=${itemsPerPage}`;
     }
 
-    return `${endpoint}+location:${place}+language:${language}&page=${page}&per_page=${itensPerPage}`;
+    return `${endpoint}+location:${place}+language:${language}&page=${page}&per_page=${itemsPerPage}`;
+  }
+
+  private getRepositoriesEndpoint(searchConfig: SearchConfig) {
+    let username = searchConfig.userName;
+    let page = searchConfig.page;
+    let itemsPerPage = searchConfig.itemsPerPage;
+
+    return `${this.userDetailEndpoint}${username}/repos?per_page=${itemsPerPage}&page=${page}`;
   }
 }

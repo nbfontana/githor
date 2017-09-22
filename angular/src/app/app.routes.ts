@@ -12,6 +12,7 @@ export const ROUTES = [
     children: [
       {path: '', redirectTo: 'users', pathMatch: 'full'},
       {path: 'users', loadChildren: './modules/users#UsersModule'},
+      {path: 'repositories', loadChildren: './modules/repositories#RepositoriesModule'},
       {path: '**', redirectTo: 'users', pathMatch: 'full'}
     ]
   },

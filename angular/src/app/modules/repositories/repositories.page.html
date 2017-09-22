@@ -1,0 +1,21 @@
+<loading [visible]="loading"></loading>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 page-container">
+
+      <div class="row">
+        <div class="col-md-6" *ngFor="let repo of repositories">
+          <pre>{{repo | json}}</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<githor-paginator
+  [visible]="showPaginator()"
+  (nextPage)="nextPage()"
+  (previousPage)="previousPage()">
+</githor-paginator>

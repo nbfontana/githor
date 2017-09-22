@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
-  selector: 'github-users-paginator',
-  templateUrl: 'github-users-paginator.component.html',
-  styleUrls: ['./github-users-paginator.component.scss']
+  selector: 'githor-paginator',
+  templateUrl: 'githor-paginator.component.html',
+  styleUrls: ['./githor-paginator.component.scss']
 })
-export class GithubUsersPaginatorComponent {
+export class GithorPaginatorComponent {
 
   @Input() visible: boolean = true;
 

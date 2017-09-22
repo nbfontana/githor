@@ -34,7 +34,7 @@ export class UsersPageComponent {
       return;
     }
 
-    if (this.users.length === this.searchConfig.itensPerPage) {
+    if (this.users.length === this.searchConfig.itemsPerPage) {
       this.searchConfig.page = this.searchConfig.page + 1;
     }
 

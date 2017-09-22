@@ -7,7 +7,7 @@ import {NgxUtilitiesModule} from "ngx-utilities";
 import {GithubService} from "./services/github.service";
 import {GithubUserCardComponent} from "./components/github-user-card/github-user-card.component";
 import {LoadingComponent} from "./components/githor-loading/loading.component";
-import {GithubUsersPaginatorComponent} from "./components/github-users-paginator/github-users-paginator.component";
+import {GithorPaginatorComponent} from "./components/github-users-paginator/githor-paginator.component";
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import {GithubUsersPaginatorComponent} from "./components/github-users-paginator
     NgxUtilitiesModule.forRoot()
   ],
   declarations: [
-    GithubUsersPaginatorComponent,
+    GithorPaginatorComponent,
     GithubUserCardComponent,
     LoadingComponent
   ],
@@ -32,7 +32,7 @@ import {GithubUsersPaginatorComponent} from "./components/github-users-paginator
     NgxBrModule,
     NgxUtilitiesModule,
     GithubUserCardComponent,
-    GithubUsersPaginatorComponent,
+    GithorPaginatorComponent,
     LoadingComponent
   ],
   providers: [
