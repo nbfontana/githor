@@ -21,7 +21,7 @@ export class UsersPageComponent {
     this.getUsers();
   }
 
-  private getUsers() {
+  public getUsers() {
     this.loading = true;
     this.githubService.getUsers(this.searchConfig).subscribe((users: GithubUser[]) => {
       this.loading = false;

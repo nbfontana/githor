@@ -4,7 +4,8 @@
   "author": "Neri Bez Fontaana",
   "scripts": {
     "ng": "ng",
-    "start": "npm i -d && ng serve",
+    "start": "node server.js",
+    "postinstall": "npm run build:prod",
     "server": "ng serve",
     "server:dev": "npm run preserver && ng serve",
     "preserver": "ng lint",
@@ -19,7 +20,9 @@
     "lint": "ng lint"
   },
   "private": true,
-  "devDependencies": {
+  "dependencies": {
+    "@angular/cli": "1.2.6",
+    "express": "^4.15.4",
     "@angular/animations": "^4.3.0",
     "@angular/cdk": "^2.0.0-beta.8",
     "@angular/common": "^4.3.0",
@@ -34,7 +37,6 @@
     "@angular/router": "^4.3.0",
     "@ngx-translate/core": "6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
-    "@angular/cli": "1.2.6",
     "@angular/compiler-cli": "^4.3.0",
     "@angular/language-service": "^4.3.0",
     "@types/jasmine": "2.5.45",
@@ -81,5 +83,9 @@
     "ts-node": "3.0.4",
     "tslint": "5.3.2",
     "typescript": "2.3.3"
+  },
+  "engines": {
+    "node": "6.11.2",
+    "npm": "3.10.10"
   }
 }
