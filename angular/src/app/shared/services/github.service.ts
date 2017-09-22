@@ -1,8 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import {Http} from "@angular/http";
+import {normalizeCallbackVariables} from "../utils/obj.utils";
+import {GithubUser} from "../model/github-user";
+import {SearchConfig} from "../../modules/users/users.config";
 
 @Injectable()
 export class GithubService {
@@ -10,20 +13,16 @@ export class GithubService {
   private usersEndpoint = 'https://api.github.com/search/users?q=';
   private userDetailEndpoint = 'https://api.github.com/users/';
 
-  // const url = `${this.userDetailEndpoint}${userName}/repos`;
-  // getUsersByPlaceAndLanguage(place: string, language: string, page = 1) {
-  // url = `${this.usersEndpoint}location:${place}+language:${language}&page=${page}`;
-
   constructor(private http: Http) {
   }
 
-  public getDetailsByUserName(userName: string): Observable<any> {
-    const endpoint = `${this.userDetailEndpoint}${userName}`;
+  public getUsers(searchConfig: SearchConfig): Observable<GithubUser[]> {
+    let endpoint = this.createPaginationEndpoint(searchConfig);
 
     return Observable.create((observer) => {
-      return this.http.get(endpoint).map((res: Response) => res.json())
-        .subscribe((user) => {
-          observer.next(user);
+      return this.http.get(endpoint).map((res) => res.json())
+        .subscribe((res) => {
+          observer.next(this.normalizeUsersList(res.items || []));
           observer.complete();
         }, (error) => {
           observer.error(error);
@@ -32,22 +31,42 @@ export class GithubService {
     });
   }
 
-  // private extractData(res: Response) {
-  //   const body = res.json();
-  //   return body.items || {};
-  // }
-  //
-  // private handleError(error: Response | any) {
-  //   let errMsg: string;
-  //   if (error instanceof Response) {
-  //     const body = error.json() || '';
-  //     const err = body.error || JSON.stringify(body);
-  //     errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-  //   } else {
-  //     errMsg = error.message ? error.message : error.toString();
-  //   }
-  //   console.error(errMsg);
-  //   return Observable.throw(errMsg);
-  // }
+  public getDetailsByUserName(userName: string): Observable<GithubUser> {
+    const endpoint = `${this.userDetailEndpoint}${userName}`;
 
+    return Observable.create((observer) => {
+      return this.http.get(endpoint).map((res) => res.json())
+        .subscribe((user) => {
+          observer.next(normalizeCallbackVariables(user));
+          observer.complete();
+        }, (error) => {
+          observer.error(error);
+          observer.complete();
+        });
+    });
+  }
+
+  private normalizeUsersList(usersList: any[]) {
+    let normalizedUsersList = [];
+
+    if (!usersList) {
+      return normalizedUsersList;
+    }
+
+    usersList.forEach((user) => {
+      normalizedUsersList.push(normalizeCallbackVariables(user));
+    });
+
+    return normalizedUsersList;
+  }
+
+  private createPaginationEndpoint(searchConfig: SearchConfig) {
+    if (searchConfig.place && !searchConfig.language) {
+      return `${this.usersEndpoint}${searchConfig.userName}+location:${searchConfig.place}&page=${searchConfig.page}&per_page=12`;
+    } else if (!searchConfig.place && searchConfig.language) {
+      return `${this.usersEndpoint}${searchConfig.userName}+language:${searchConfig.language}&page=${searchConfig.page}&per_page=12`;
+    }
+
+    return `${this.usersEndpoint}${searchConfig.userName}+location:${searchConfig.place}+language:${searchConfig.language}&page=${searchConfig.page}&per_page=12`;
+  }
 }

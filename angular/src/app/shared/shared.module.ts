@@ -5,6 +5,9 @@ import {SharedMaterialModule} from "app/shared/material.module";
 import {NgxBrModule} from "ngx-br";
 import {NgxUtilitiesModule} from "ngx-utilities";
 import {GithubService} from "./services/github.service";
+import {GithubUserCardComponent} from "./components/github-user-card/github-user-card.component";
+import {LoadingComponent} from "./components/githor-loading/loading.component";
+import {GithubUsersPaginatorComponent} from "./components/github-users-paginator/github-users-paginator.component";
 
 @NgModule({
   imports: [
@@ -15,7 +18,11 @@ import {GithubService} from "./services/github.service";
     NgxBrModule.forRoot(),
     NgxUtilitiesModule.forRoot()
   ],
-  declarations: [],
+  declarations: [
+    GithubUsersPaginatorComponent,
+    GithubUserCardComponent,
+    LoadingComponent
+  ],
   entryComponents: [],
   exports: [
     CommonModule,
@@ -23,7 +30,10 @@ import {GithubService} from "./services/github.service";
     ReactiveFormsModule,
     SharedMaterialModule,
     NgxBrModule,
-    NgxUtilitiesModule
+    NgxUtilitiesModule,
+    GithubUserCardComponent,
+    GithubUsersPaginatorComponent,
+    LoadingComponent
   ],
   providers: [
     CommonModule,

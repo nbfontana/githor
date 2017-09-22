@@ -10,9 +10,9 @@ export const ROUTES = [
     path: 'app',
     component: ShellComponent,
     children: [
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home', loadChildren: './modules/home#HomeModule'},
-      {path: '**', redirectTo: 'home', pathMatch: 'full'}
+      {path: '', redirectTo: 'users', pathMatch: 'full'},
+      {path: 'users', loadChildren: './modules/users#UsersModule'},
+      {path: '**', redirectTo: 'users', pathMatch: 'full'}
     ]
   },
   {

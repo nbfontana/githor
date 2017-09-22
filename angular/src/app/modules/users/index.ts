@@ -1,20 +1,20 @@
 import {NgModule} from "@angular/core";
 import {SharedModule} from "../../shared/shared.module";
 import {RouterModule} from "@angular/router";
-import {HomePageComponent} from "./home.page";
-import {HOME_ROUTES} from "./home.routing";
+import {UsersPageComponent} from "./users.page";
+import {USERS_ROUTES} from "./users.routing";
 
 @NgModule({
   imports: [
     SharedModule,
-    RouterModule.forChild(HOME_ROUTES)
+    RouterModule.forChild(USERS_ROUTES)
   ],
   declarations: [
-    HomePageComponent
+    UsersPageComponent
   ],
   exports: [],
   providers: []
 })
-export class HomeModule {
-  public static routes = HOME_ROUTES;
+export class UsersModule {
+  public static routes = USERS_ROUTES;
 }

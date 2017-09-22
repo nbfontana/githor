@@ -1,6 +1,6 @@
 import {
   MdAutocompleteModule,
-  MdButtonModule,
+  MdButtonModule, MdCardModule,
   MdCheckboxModule,
   MdDialogModule,
   MdExpansionModule,
@@ -20,6 +20,7 @@ import {SVMdPaginatorIntl} from "./sv-md-paginator-intl";
 
 @NgModule({
   imports: [
+    MdCardModule,
     MdExpansionModule,
     MdAutocompleteModule,
     MdTabsModule,
@@ -36,6 +37,7 @@ import {SVMdPaginatorIntl} from "./sv-md-paginator-intl";
     MdProgressBarModule
   ],
   exports: [
+    MdCardModule,
     MdExpansionModule,
     MdAutocompleteModule,
     MdTabsModule,

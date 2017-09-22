@@ -1,10 +1,10 @@
 import {Routes} from "@angular/router";
-import {HomePageComponent} from "./home.page";
+import {UsersPageComponent} from "./users.page";
 
-export const HOME_ROUTES: Routes = [
+export const USERS_ROUTES: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    component: UsersPageComponent,
     pathMatch: 'full'
   },
   {

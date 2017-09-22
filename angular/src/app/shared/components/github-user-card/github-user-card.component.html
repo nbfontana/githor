@@ -1,0 +1,10 @@
+<md-card>
+  <h4 class="text-center">{{user.login}}</h4>
+  <img md-card-image src="{{user.avatarUrl}}" alt="Photo of a {{user.name}}">
+  <md-card-actions>
+  <button md-icon-button color="primary" (click)="openGithubInANewTab()">
+      <i class="githor githor-github zmdi-hc-2x"></i>
+    </button>
+    <button md-raised-button color="primary">Repositories</button>
+  </md-card-actions>
+</md-card>

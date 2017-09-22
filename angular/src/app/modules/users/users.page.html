@@ -1,0 +1,42 @@
+<loading [visible]="loading"></loading>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 page-container">
+
+      <div class="row mb20 mt20">
+        <div class="col-md-3 col-sm-3">
+          <md-form-field class="full">
+            <input mdInput placeholder="Username" [(ngModel)]="searchConfig.userName">
+          </md-form-field>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <md-form-field class="full">
+            <input mdInput placeholder="Place (Brazil as default)" [(ngModel)]="searchConfig.place">
+          </md-form-field>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <md-form-field class="full">
+            <input mdInput placeholder="Language" [(ngModel)]="searchConfig.language">
+          </md-form-field>
+        </div>
+        <div class="col-md-3 col-sm-3 text-right">
+          <button md-raised-button color="primary" (click)="getUsers()">Search users</button>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="!loading">
+        <div class="col-md-3 col-sm-6 form-group" *ngFor="let user of users">
+          <github-user-card [user]="user"></github-user-card>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<github-users-paginator
+  [visible]="showPaginator()"
+  (nextPage)="nextPage()"
+  (previousPage)="previousPage()">
+</github-users-paginator>
