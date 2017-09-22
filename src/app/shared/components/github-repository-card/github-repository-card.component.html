@@ -4,7 +4,14 @@
   <md-card-content style="min-height: 130px !important">
     <p><strong>It is Fork?</strong> {{repo.fork ? 'Yes' : 'No'}}</p>
     <p><strong>Homepage?</strong> {{repo.homepage || 'Doesn\'t have one'}}</p>
-    <p><strong>Has Issues?</strong> {{repo.hasIssues ? 'Yes =(' : 'Nope, it\'s a perfect repo'}}</p>
+    <p>
+      <strong>Has Issues?</strong>
+      {{repo.openIssuesCount ? repo.openIssuesCount + ' =(' : 'Nope, it\'s a perfect repo'}}
+    </p>
+    <p>
+      <i class="githor githor-star"> {{repo.stargazersCount}}</i>
+      <i class="githor githor-eye"> {{repo.watchersCount}}</i>
+    </p>
   </md-card-content>
 
   <md-card-actions>
