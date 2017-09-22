@@ -46,6 +46,10 @@ export class UsersPageComponent {
     this.getUsers();
   }
 
+  public showNotFound(): boolean {
+    return this.users && this.users.length === 0;
+  }
+
   public showUsersAndPaginator(): boolean {
     return !this.loading && this.users.length > 0;
   }
