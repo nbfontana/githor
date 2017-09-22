@@ -3,6 +3,7 @@ import {SharedModule} from "../../shared/shared.module";
 import {RouterModule} from "@angular/router";
 import {UsersPageComponent} from "./users.page";
 import {USERS_ROUTES} from "./users.routing";
+import {CommentUserDialogComponent} from "./comment/comment-user.dialog";
 
 @NgModule({
   imports: [
@@ -10,7 +11,11 @@ import {USERS_ROUTES} from "./users.routing";
     RouterModule.forChild(USERS_ROUTES)
   ],
   declarations: [
-    UsersPageComponent
+    UsersPageComponent,
+    CommentUserDialogComponent
+  ],
+  entryComponents: [
+    CommentUserDialogComponent
   ],
   exports: [],
   providers: []

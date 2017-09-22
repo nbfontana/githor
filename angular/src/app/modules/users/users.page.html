@@ -27,7 +27,10 @@
 
       <div class="row" *ngIf="showUsersAndPaginator()">
         <div class="col-md-3 col-sm-6 form-group" *ngFor="let user of users">
-          <github-user-card [user]="user"></github-user-card>
+          <github-user-card
+            [user]="user"
+            (commentEvt)="commentUser($event)">
+          </github-user-card>
         </div>
       </div>
 

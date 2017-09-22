@@ -3,6 +3,8 @@ import {BreedService} from "../breed/breed.service";
 import {GithubService} from "../../shared/services/github.service";
 import {GithubUser} from "../../shared/model/github-user";
 import {SearchConfig} from "./users.config";
+import {MdDialog} from "@angular/material";
+import {CommentUserDialogComponent} from "./comment/comment-user.dialog";
 
 @Component({
   selector: 'users',
@@ -14,7 +16,8 @@ export class UsersPageComponent {
   public users: GithubUser[];
   public searchConfig: SearchConfig = new SearchConfig();
 
-  constructor(private githubService: GithubService) {
+  constructor(private githubService: GithubService,
+              private dialog: MdDialog) {
     this.getUsers();
   }
 
@@ -52,5 +55,10 @@ export class UsersPageComponent {
 
   public showUsersAndPaginator(): boolean {
     return !this.loading && this.users.length > 0;
+  }
+
+  public commentUser(username: string): void {
+    let dialogRef = this.dialog.open(CommentUserDialogComponent, {data: username});
+    dialogRef.afterClosed().subscribe(data => {});
   }
 }

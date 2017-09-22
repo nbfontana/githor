@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {GithubUser} from "../../model/github-user";
 
 @Component({
@@ -9,10 +9,17 @@ import {GithubUser} from "../../model/github-user";
 export class GithubUserCardComponent {
 
   @Input() user: GithubUser;
+  @Output() commentEvt = new EventEmitter();
 
   public openGithubInANewTab() {
     let win = window.open(this.user.htmlUrl, '_blank');
     win.focus();
   }
+
+  public comment(): void {
+    this.commentEvt.next(this.user.login);
+  }
+
+  public goToRepos() {}
 }
 

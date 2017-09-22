@@ -1,0 +1,10 @@
+<md-dialog-content>
+  <md-form-field>
+    <textarea rows="4" cols="50" mdInput #message maxlength="256" placeholder="Comment here" [(ngModel)]="comment"></textarea>
+    <md-hint align="start"><strong>Be cool, I know you can</strong></md-hint>
+    <md-hint align="end">{{message.value.length}} / 256</md-hint>
+  </md-form-field>
+</md-dialog-content>
+<md-dialog-actions>
+  <button style="width: 100%" color="primary" md-button (click)="done()">Done</button>
+</md-dialog-actions>
