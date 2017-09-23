@@ -26,6 +26,7 @@ In this project I made use of NodeJS with NPM, Webpack to bundle and serve the a
 * I've made use of a Guard over the /repositories route, that way the user isn't able to navigate directly to the page without passing the the needed data to it.
 * If the user types a incorrect base url like 'https://githor.herokuapp.com/#/blabla' he's redirected to 'https://githor.herokuapp.com/#/page-not-found' but if he types only the subroute incorrectly, like 'https://githor.herokuapp.com/#/app/ussssers', he will get a default route for that.
 * Some components were created to help the main screens, like 'githor-loading' and 'github-user-card'. Some of them are dumb components wich are only responsible of emiting an event to the parent component so it can implement as it desires.
+* The final bundle is made with an CLI AOT Build and has async routes, for better performance. 
 
 **Developer Considerations**
 
