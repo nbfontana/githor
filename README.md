@@ -58,6 +58,7 @@ npm run build:hml
 If you want to test the app you can run one of those
 ```
 npm run test
+npm run test:watch
 npm run test:prod // To run with PanthomJS in production linux environment (not recommended)
 npm run e2e
 ``` 
