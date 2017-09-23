@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from "@angular/core";
-import {SearchConfig} from "../users/users.config";
+import {SearchConfig} from "../../shared/model/search.config";
 import {GithubService} from "app/shared/services/github.service";
 import {ActivatedRoute} from "@angular/router";
 import {GithubRepository} from "./repository";

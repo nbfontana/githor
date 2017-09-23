@@ -1,8 +1,8 @@
 import {Component} from "@angular/core";
 import {BreedService} from "../breed/breed.service";
 import {GithubService} from "../../shared/services/github.service";
-import {GithubUser} from "../../shared/model/github-user";
-import {SearchConfig} from "./users.config";
+import {GithubUser} from "./github-user";
+import {SearchConfig} from "../../shared/model/search.config";
 import {MdDialog} from "@angular/material";
 import {CommentUserDialogComponent} from "./comment-dialog/comment-user.dialog";
 

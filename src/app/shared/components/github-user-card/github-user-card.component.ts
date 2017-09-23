@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {GithubUser} from "../../model/github-user";
+import {GithubUser} from "../../../modules/users/github-user";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

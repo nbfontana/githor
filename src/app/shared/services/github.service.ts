@@ -4,8 +4,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {Http} from "@angular/http";
 import {normalizeCallbackVariables} from "../utils/obj.utils";
-import {GithubUser} from "../model/github-user";
-import {SearchConfig} from "../../modules/users/users.config";
+import {GithubUser} from "../../modules/users/github-user";
+import {SearchConfig} from "../model/search.config";
 import {GithubRepository} from "../../modules/repositories/repository";
 
 @Injectable()

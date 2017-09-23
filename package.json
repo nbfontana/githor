@@ -14,7 +14,8 @@
     "build:hml": "ng build --prod --env=hml",
     "build:prod": "ng build --prod --env=prod",
     "prebuild": "ng lint && ng e2e --watch=false && ng test --watch=false",
-    "test": "ng test --browser Chrome",
+    "test": "ng test --watch=false --browser Chrome",
+    "test:watch": "ng test --browser Chrome",
     "test:prod": "ng test --browser PhantomJS2 --watch=false",
     "test:e2e": "ng e2e",
     "lint": "ng lint"
