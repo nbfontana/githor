@@ -9,13 +9,15 @@ import {GithubUserCardComponent} from "./components/github-user-card/github-user
 import {LoadingComponent} from "./components/githor-loading/loading.component";
 import {GithorPaginatorComponent} from "./components/github-users-paginator/githor-paginator.component";
 import {GithubRepositoryCardComponent} from "./components/github-repository-card/github-repository-card.component";
-import {Http, HttpModule} from "@angular/http";
+import {HttpModule} from "@angular/http";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
     HttpModule,
     CommonModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     SharedMaterialModule,
     NgxBrModule.forRoot(),
@@ -32,6 +34,7 @@ import {Http, HttpModule} from "@angular/http";
     HttpModule,
     CommonModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     SharedMaterialModule,
     NgxBrModule,
