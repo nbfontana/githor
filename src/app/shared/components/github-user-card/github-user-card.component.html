@@ -1,28 +1,28 @@
-<md-card>
+<mat-card>
   <h4 class="text-center">{{user.login}}</h4>
-  <img md-card-image src="{{user.avatarUrl}}" alt="Photo of a {{user.name}}">
-  <md-card-actions>
+  <img mat-card-image src="{{user.avatarUrl}}" alt="Photo of a {{user.name}}">
+  <mat-card-actions>
 
-    <button md-icon-button
+    <button mat-icon-button
             color="primary"
             mdTooltip="Open Github"
             (click)="openGithubInANewTab()">
       <i class="githor githor-github zmdi-hc-2x"></i>
     </button>
 
-    <button md-icon-button
+    <button mat-icon-button
             color="primary"
             mdTooltip="Comment this user"
             (click)="comment()">
       <i class="githor githor-comment-text zmdi-hc-2x"></i>
     </button>
 
-    <button md-icon-button
+    <button mat-icon-button
             color="primary"
             mdTooltip="List repositories"
             (click)="goToRepos()">
       <i class="githor githor-format-list-bulleted zmdi-hc-2x"></i>
     </button>
 
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>

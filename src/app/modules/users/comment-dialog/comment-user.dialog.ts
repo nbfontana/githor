@@ -1,5 +1,5 @@
 import {Component, Inject} from "@angular/core";
-import {MD_DIALOG_DATA, MdDialogRef} from "@angular/material";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {HttpClient} from '../../http/http-client';
 
 @Component({
@@ -11,8 +11,8 @@ export class CommentUserDialogComponent {
   public user: string = '';
   public comment: string = '';
 
-  constructor(public dialogRef: MdDialogRef<CommentUserDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any) {
+  constructor(public dialogRef: MatDialogRef<CommentUserDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) {
     this.user = data;
     this.getLocalStorageComment();
   }

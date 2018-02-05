@@ -3,14 +3,14 @@
 
     <div class="navbar-header">
       <a class="pull-right toggle">
-        <button md-icon-button
+        <button mat-icon-button
                 (click)="isCollapsed = !isCollapsed"
                 class="navbar-toggle collapsed">
           <i class="githor githor-menu"></i>
         </button>
       </a>
       <a class="pull-right account-mobile">
-        <button class="githor-info-icon" md-icon-button style="color: white;">
+        <button class="githor-info-icon" mat-icon-button style="color: white;">
           <i class="githor githor-account" style="padding-left: 2px"></i>
         </button>
       </a>
@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav menus">
         <li>
           <a [routerLink]="'./home'" class="pl0" (click)="collapse()">
-            <button md-button>Users</button>
+            <button mat-button>Users</button>
           </a>
         </li>
       </ul>
@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav navbar-right navbar-right-full">
         <li>
           <a class="p-l-0">
-            <button class="githor-info-username" md-button style="color: white;">
+            <button class="githor-info-username" mat-button style="color: white;">
               <span class="githor-user-name">Neri Bez Fontana</span>
               <i class="githor githor-chevron-down" style="padding-left: 2px"></i>
             </button>

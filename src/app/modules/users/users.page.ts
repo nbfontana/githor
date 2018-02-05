@@ -3,7 +3,7 @@ import {BreedService} from "../breed/breed.service";
 import {GithubService} from "../../shared/services/github.service";
 import {GithubUser} from "./github-user";
 import {SearchConfig} from "../../shared/model/search.config";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 import {CommentUserDialogComponent} from "./comment-dialog/comment-user.dialog";
 
 @Component({
@@ -17,7 +17,7 @@ export class UsersPageComponent {
   public searchConfig: SearchConfig = new SearchConfig();
 
   constructor(private githubService: GithubService,
-              private dialog: MdDialog) {
+              private dialog: MatDialog) {
     this.getUsers();
   }
 

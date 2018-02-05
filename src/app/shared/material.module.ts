@@ -1,63 +1,63 @@
 import {
-  MdAutocompleteModule,
-  MdButtonModule, MdCardModule,
-  MdCheckboxModule,
-  MdDialogModule,
-  MdExpansionModule,
-  MdInputModule,
-  MdMenuModule,
-  MdPaginatorIntl,
-  MdPaginatorModule,
-  MdProgressBarModule,
-  MdProgressSpinnerModule,
-  MdTableModule,
-  MdTabsModule,
-  MdTooltipModule
+  MatAutocompleteModule,
+  MatButtonModule, MatCardModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatInputModule,
+  MatMenuModule,
+  MatPaginatorIntl,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatTableModule,
+  MatTabsModule,
+  MatTooltipModule
 } from "@angular/material";
 import {NgModule} from "@angular/core";
 import {CdkColumnDef, CdkTableModule} from "@angular/cdk/table";
-import {SVMdPaginatorIntl} from "./sv-md-paginator-intl";
+import {SVMatPaginatorIntl} from "./sv-md-paginator-intl";
 
 @NgModule({
   imports: [
-    MdCardModule,
-    MdExpansionModule,
-    MdAutocompleteModule,
-    MdTabsModule,
-    MdTooltipModule,
-    MdDialogModule,
-    MdProgressSpinnerModule,
-    MdPaginatorModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatAutocompleteModule,
+    MatTabsModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
     CdkTableModule,
-    MdTableModule,
-    MdMenuModule,
-    MdButtonModule,
-    MdInputModule,
-    MdCheckboxModule,
-    MdProgressBarModule
+    MatTableModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatProgressBarModule
   ],
   exports: [
-    MdCardModule,
-    MdExpansionModule,
-    MdAutocompleteModule,
-    MdTabsModule,
-    MdTooltipModule,
-    MdDialogModule,
-    MdProgressSpinnerModule,
-    MdPaginatorModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatAutocompleteModule,
+    MatTabsModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
     CdkTableModule,
-    MdTableModule,
-    MdMenuModule,
-    MdButtonModule,
-    MdInputModule,
-    MdCheckboxModule,
-    MdProgressBarModule,
+    MatTableModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatProgressBarModule,
   ],
   providers: [
     CdkColumnDef,
     {
-      provide: MdPaginatorIntl,
-      useClass: SVMdPaginatorIntl
+      provide: MatPaginatorIntl,
+      useClass: SVMatPaginatorIntl
     }
   ]
 })

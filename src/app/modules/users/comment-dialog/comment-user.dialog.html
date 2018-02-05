@@ -1,10 +1,10 @@
-<md-dialog-content>
-  <md-form-field>
-    <textarea rows="4" cols="50" mdInput #message maxlength="256" placeholder="Comment here" [(ngModel)]="comment"></textarea>
-    <md-hint align="start"><strong>Be cool, I know you can</strong></md-hint>
-    <md-hint align="end">{{message.value.length}} / 256</md-hint>
-  </md-form-field>
-</md-dialog-content>
-<md-dialog-actions>
+<mat-dialog-content>
+  <mat-form-field>
+    <textarea rows="4" cols="50" matInput #message maxlength="256" placeholder="Comment here" [(ngModel)]="comment"></textarea>
+    <mat-hint align="start"><strong>Be cool, I know you can</strong></mat-hint>
+    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
   <button style="width: 100%" color="primary" md-button (click)="done()">Done</button>
-</md-dialog-actions>
+</mat-dialog-actions>

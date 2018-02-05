@@ -1,6 +1,6 @@
-import {MdPaginatorIntl} from "@angular/material";
+import {MatPaginatorIntl} from "@angular/material";
 
-export class SVMdPaginatorIntl extends MdPaginatorIntl {
+export class SVMatPaginatorIntl extends MatPaginatorIntl {
 
   public itemsPerPageLabel = 'Registros por página: ';
   public nextPageLabel = 'Página seguinte';

@@ -1,19 +1,16 @@
-import {HttpModule, Http} from "@angular/http";
 import {NgModule, LOCALE_ID} from "@angular/core";
 import {RouterModule, PreloadAllModules} from "@angular/router";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {AppComponent} from "./app.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "app/shared/shared.module";
 import {ShellModule} from "./shell/shell.module";
-import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
+import {TranslateService} from "@ngx-translate/core";
 import {ROUTES} from "./app.routes";
 import {PageNotFoundPageComponent} from "./modules/page-not-found/page-not-found.page";
-
-export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http);
-}
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HttpModule} from "@angular/http";
+import {EmptyResponseBodyErrorInterceptor} from "./shared/empty-http-interceptor";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -28,20 +25,18 @@ export function HttpLoaderFactory(http: Http) {
     ShellModule,
     SharedModule,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [Http]
-      }
-    })
   ],
   providers: [
     TranslateService,
     {
       provide: LOCALE_ID,
       useValue: "pt-br"
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: EmptyResponseBodyErrorInterceptor,
+      multi: true,
+    },
   ]
 })
 export class AppModule {

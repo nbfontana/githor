@@ -6,24 +6,24 @@
 
       <div class="row mb20 mt20">
         <div class="col-md-3 col-sm-3">
-          <md-form-field class="full">
-            <input mdInput placeholder="Username"
+          <mat-form-field class="full">
+            <input matInput placeholder="Username"
                    [(ngModel)]="searchConfig.userName"
                    (ngModelChange)="searchConfig.page = 1">
-          </md-form-field>
+          </mat-form-field>
         </div>
         <div class="col-md-3 col-sm-3">
-          <md-form-field class="full">
-            <input mdInput placeholder="Place (Brazil as default)" [(ngModel)]="searchConfig.place">
-          </md-form-field>
+          <mat-form-field class="full">
+            <input matInput placeholder="Place (Brazil as default)" [(ngModel)]="searchConfig.place">
+          </mat-form-field>
         </div>
         <div class="col-md-3 col-sm-3">
-          <md-form-field class="full">
-            <input mdInput placeholder="Language" [(ngModel)]="searchConfig.language">
-          </md-form-field>
+          <mat-form-field class="full">
+            <input matInput placeholder="Language" [(ngModel)]="searchConfig.language">
+          </mat-form-field>
         </div>
         <div class="col-md-3 col-sm-3 text-right">
-          <button md-raised-button color="primary" (click)="getUsers()">Search users</button>
+          <button mat-raised-button color="primary" (click)="getUsers()">Search users</button>
         </div>
       </div>
 

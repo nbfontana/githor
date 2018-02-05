@@ -1,7 +1,7 @@
-<md-card>
+<mat-card>
   <h5>{{repo.name}}</h5>
 
-  <md-card-content style="min-height: 130px !important">
+  <mat-card-content style="min-height: 130px !important">
     <p><strong>It's Forked?</strong> {{repo.fork ? 'Yes' : 'No'}}</p>
     <p><strong>Homepage?</strong> {{repo.homepage || 'Doesn\'t have one'}}</p>
     <p>
@@ -12,18 +12,18 @@
       <i class="githor githor-star"> {{repo.stargazersCount}}</i>
       <i class="githor githor-eye"> {{repo.watchersCount}}</i>
     </p>
-  </md-card-content>
+  </mat-card-content>
 
-  <md-card-actions>
+  <mat-card-actions>
     <button md-icon-button
             color="primary"
-            mdTooltip="Open in Github" (click)="openInGithub()">
+            matTooltip="Open in Github" (click)="openInGithub()">
       <i class="githor githor-github zmdi-hc-2x"></i>
     </button>
     <button md-icon-button
             color="primary"
-            mdTooltip="{{'Description: ' + (repo.description || 'Doesn\'t have one')}}">
+            matTooltip="{{'Description: ' + (repo.description || 'Doesn\'t have one')}}">
       <i class="githor githor-comment-alt-text zmdi-hc-2x"></i>
     </button>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>
