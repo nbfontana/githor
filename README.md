@@ -1,8 +1,6 @@
 # githor
 GitHub's profile collector made with Angular :octocat:
 
-Available here: https://githor.herokuapp.com
-
 # Implementation
 
 In this project I made use of NodeJS with NPM, Webpack to bundle and serve the application with webpack-dev-server in dev environment, and Angular 4+. I also made use of Angular Material components for better UI, and some custom SCSS scripts.
