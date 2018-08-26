@@ -26,10 +26,6 @@ In this project I made use of NodeJS with NPM, Webpack to bundle and serve the a
 * Some components were created to help the main screens, like 'githor-loading' and 'github-user-card'. Some of them are dumb components wich are only responsible of emiting an event to the parent component so it can implement as it desires.
 * The final bundle is made with an CLI AOT Build and has async routes, for better performance. 
 
-**Developer Considerations**
-
-I started with Angular.js a long time ago, then, I changed to Angular and I've already built more than 3 production ready applications with it. Nowadays I'm working on improving my skills with React, React w/ Redux, and some DevOps stuff. We should never stop learning...
-
 # Installation
 
 You need NodeJS with NPM and the [HerokuCLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) to publish the app if you want to.
